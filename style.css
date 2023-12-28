@@ -24,7 +24,7 @@ h3 {
 .outer-wrap {
   width: 100%;
   min-height: 100vh;
-  background-color: #f2f7f8;
+  background-color: #e1e6e7;
   padding: 30px;
 }
 
@@ -39,7 +39,7 @@ h3 {
 }
 
 .heading .title {
-  font-size: 30px;
+  font-size: 40px;
   color: black;
   font-weight: 600;
   text-align: center;
@@ -80,6 +80,9 @@ h3 {
   font-size: 18px;
   padding: 5px;
   margin: 10px;
+  border: 1px solid #717171;
+  border-radius: 5px;
+  outline: none;
 }
 
 .actions .add input[type="submit"] {
