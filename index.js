@@ -4,11 +4,18 @@ const expenseList = document.querySelector("ul.expense-list");
 const balance = document.getElementById("balance");
 const income = document.getElementById("income");
 const expense = document.getElementById("expense");
+const transactionHistory = document.querySelector(".transaction-history");
 
 let transactions =
   localStorage.getItem("transactions") != null
     ? JSON.parse(localStorage.getItem("transactions"))
     : [];
+
+if (transactions.length === 0) {
+  transactionHistory.classList.add("hide");
+} else {
+  transactionHistory.classList.remove("hide");
+}
 
 // update statistics
 function updateStatistics() {
@@ -39,7 +46,7 @@ function generateTemplate(id, source, amount, time) {
             <span>${source}</span>
             <span id="time">${time}</span>
           </p>
-          $<span>${Math.abs(amount)}</span>
+          ₦<span>${Math.abs(amount)}</span>
           <i class="bi bi-trash delete"></i>
         </li>`;
 }
@@ -70,7 +77,10 @@ function addTransaction(source, amount) {
 // form details
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  addTransaction(form.source.value, Number(form.amount.value));
+  if (form.source.value.trim() === "" || form.amount.value.trim() === "") {
+    alert("Please enter proper values!");
+  }
+  addTransaction(form.source.value.trim(), Number(form.amount.value.trim()));
   updateStatistics();
   form.reset();
 });
