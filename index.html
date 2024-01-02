@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TrackFund - Easiest Way To Track Your Transactions!</title>
+    <title>TracFund - Easiest Way To Track Your Transactions!</title>
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
@@ -14,7 +14,7 @@
       <div class="outer-wrap">
         <div class="inner-wrap">
           <section class="heading">
-            <p class="title">TrackFund</p>
+            <p class="title">TracFund</p>
             <p class="subtitle">Easiest Way To Track Your Transactions!</p>
           </section>
 
@@ -25,13 +25,13 @@
                 <input
                   type="text"
                   name="source"
-                  placeholder="Source"
+                  placeholder="Add a transaction source"
                   autocomplete="off"
                 />
                 <input
                   type="number"
                   name="amount"
-                  placeholder="Amount"
+                  placeholder="Add the amount"
                   autocomplete="off"
                 />
                 <input type="submit" value="Add Transaction" />
@@ -39,9 +39,11 @@
             </div>
             <div class="stats">
               <h3>Statistics</h3>
-              <p class="balance">Balance: $<span id="balance">651</span></p>
-              <p class="income">Income: $<span id="income">700</span></p>
-              <p class="expense">Expense: $<span id="expense">49</span></p>
+              <p class="balance">
+                Account Balance: ₦<span id="balance"></span>
+              </p>
+              <p class="income">Income: ₦<span id="income"></span></p>
+              <p class="expense">Expense: ₦<span id="expense"></span></p>
             </div>
           </section>
 
@@ -50,29 +52,11 @@
             <div class="records">
               <div class="income">
                 <h3>Income</h3>
-                <ul class="income-list">
-                  <li data-id="">
-                    <p>
-                      <span class="income-title">Freelancing - JS Project</span>
-                      <span id="time">12:45:38 AM 5/19/2022</span>
-                    </p>
-                    <span>$700</span>
-                    <i class="bi bi-trash delete"></i>
-                  </li>
-                </ul>
+                <ul class="income-list"></ul>
               </div>
               <div class="expense">
                 <h3>Expense</h3>
-                <ul class="expense-list">
-                  <li data-id="">
-                    <p>
-                      <span class="expense-title">Streaming Room</span>
-                      <span id="time">12:44:21 AM 5/19/2022</span>
-                    </p>
-                    <span>$49</span>
-                    <i class="bi bi-trash delete"></i>
-                  </li>
-                </ul>
+                <ul class="expense-list"></ul>
               </div>
             </div>
           </section>
