@@ -11,10 +11,12 @@ let transactions =
     ? JSON.parse(localStorage.getItem("transactions"))
     : [];
 
-if (transactions.length === 0) {
-  transactionHistory.classList.add("hide");
-} else {
-  transactionHistory.classList.remove("hide");
+function hideTransHistory() {
+  if (transactions.length === 0) {
+    transactionHistory.classList.add("hide");
+  } else {
+    transactionHistory.classList.remove("hide");
+  }
 }
 
 // update statistics
@@ -82,6 +84,7 @@ form.addEventListener("submit", (e) => {
   }
   addTransaction(form.source.value.trim(), Number(form.amount.value.trim()));
   updateStatistics();
+  hideTransHistory();
   form.reset();
 });
 
@@ -111,6 +114,7 @@ expenseList.addEventListener("click", (event) => {
     event.target.parentElement.remove();
     deleteTransaction(Number(event.target.parentElement.dataset.id));
     updateStatistics();
+    hideTransHistory();
   }
 });
 // delete transaction incomeDOM
@@ -119,6 +123,7 @@ incomeList.addEventListener("click", (event) => {
     event.target.parentElement.remove();
     deleteTransaction(Number(event.target.parentElement.dataset.id));
     updateStatistics();
+    hideTransHistory();
   }
 });
 
@@ -126,6 +131,7 @@ incomeList.addEventListener("click", (event) => {
 function init() {
   getTransactions();
   updateStatistics();
+  hideTransHistory();
 }
 
 init();
